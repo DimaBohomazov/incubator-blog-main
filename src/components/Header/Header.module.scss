@@ -8,5 +8,7 @@
 }
 
 .logoBlock {
+  display: flex;
   background-color: var(--logo-bg);
+  line-height: 32px;
 }
