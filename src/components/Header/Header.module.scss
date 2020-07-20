@@ -5,10 +5,95 @@
   height: 55px;
   margin: 0 auto;
   background-color: var(--header-bg-color);
+  align-items: center;
 }
 
 .logoBlock {
   display: flex;
+  max-width: 140px;
+  width: 100%;
+  justify-content: center;
+  border-radius: 10px;
   background-color: var(--logo-bg);
+  height: 32px;
   line-height: 32px;
+  color: var(--secondary-font-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: Actor;
+}
+
+.searchBlock {
+  display: flex;
+  max-width: 235px;
+  width: 100%;
+  height: 32px;
+  align-items: center;
+  background-color: var(--search-bg-color);
+  border-radius: 2px;
+  label {
+    max-width: 20px;
+    width: 100%;
+    text-align: center;
+    padding-left: 5px;
+  }
+  input {
+    background-color: var(--search-bg-color);
+    height: 32px;
+    outline: none;
+    width: calc(100% - 20px);
+    border: none;
+    padding-left: 5px;
+  }
+}
+
+.headerMenuBlock {
+  display: flex;
+  color: var(--header-menu-font-color);
+  justify-content: space-between;
+  width: 250px;
+}
+
+.headerMenu {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.headerMenuItem {
+  list-style-type: none;
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 60px;
+    height: 35px;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.pItem, .pItemSpan {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+
+.headerAccount {
+
+}
+
+.headerImgBlock {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: var(--border-header-account);
+  background-color: var(--account-bg-color);
+}
+
+@font-face {
+  font-family: Actor;
+  src: url("./../../assets/fonts/Actor-Regular.ttf");
 }
