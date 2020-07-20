@@ -1,4 +1,9 @@
 :root {
     --header-bg-color: #2D3E49;
     --logo-bg: #3072AC;
+    --secondary-font-color: #ffffff;
+    --search-bg-color: #E1E5E8;
+    --header-menu-font-color: #C9D1D7;
+    --border-header-account: 1px solid #C9D1D7;
+    --account-bg-color: #3072AC;
 }
