@@ -1,9 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App'
+import {BrowserRouter} from "react-router-dom";
+import './index.css'
+import Routes from './routes'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('root')
-);
+const App = () => (
+  <BrowserRouter>
+    <Header/>
+    <Routes/>
+    <Footer/>
+  </BrowserRouter>
+)
+
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
