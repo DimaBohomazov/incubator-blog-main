@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  max-width: 1440px;
+  width: 100%;
+  height: 55px;
+  margin: 0 auto;
+  background-color: var(--header-bg-color);
+}
+
+.logoBlock {
+  display: flex;
+  background-color: var(--logo-bg);
+  line-height: 32px;
+}
