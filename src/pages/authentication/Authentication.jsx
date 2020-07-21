@@ -1,29 +1,15 @@
 import React from 'react';
-
-// import styles from './Authentication.module.scss';
 import * as s from './Authentication.module.scss';
-// import variables from './../../cssVariables/variables.css'
 import './../../cssVariables/variables.css'
-
-// --header - bg - color: #2D3E49;
-// --logo - bg: #3072AC;
-
 
 const Authentication = () => {
 
-  // console.log("variables = ", variables);
-  // console.log("styles = ", styles);
-
-  // const {border, background} = styles;
-
   return (
     <div className={s.reg__container}>
-      {/* <h1 className="reg-title">Learn and develop with IncubatorBlog </h1>*/}
       <h1 className={s.reg__title}>Learn and develop with IncubatorBlog </h1>
       <div className={s["wrapper"]}>
       
         <form action="">
-          {/* "reg_user.php" */}
           <label htmlFor="name" className={s.reg__label}>Your Name</label>
           <input className={s.input__name} required="" id="name" type="text" name="user-name" placeholder="" defaultValue=""/>
           
@@ -35,6 +21,9 @@ const Authentication = () => {
           
           <label htmlFor="password" className={s.reg__label}>Password (6 or more characters)</label>
           <input className={s.input__password} autoComplete="new-password" required="" id="password" type="password" name="password" placeholder="" defaultValue=""/>
+          
+          <label htmlFor="password--again" className={s.reg__label}>Password again, please</label>
+          <input className={s.input__password} autoComplete="new-password" required="" id="password--again" type="password" name="password--again" placeholder="" defaultValue=""/>
           
           <p className={s.reg__policy}>By clicking Agree & Join, you agree to the IncubatorBlog User Agreement, Privacy Policy, and Cookie Policy.</p>
           
