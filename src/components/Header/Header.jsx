@@ -1,7 +1,7 @@
 import React from "react";
 
 import h from './Header.module.scss';
-import './../../cssVariables/variables.css'
+import '../../assets/stylesheets/variables.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
     faHome,

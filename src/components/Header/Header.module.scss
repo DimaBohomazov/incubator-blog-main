@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  //max-width: 1440px;
   width: 100%;
   min-height: 55px;
   height: 55px;
@@ -152,13 +151,13 @@
   background-color: var(--account-bg-color);
 }
 
-@font-face {
-  font-family: Actor;
-  src: url("./../../assets/fonts/Actor-Regular.ttf");
-}
-
-@font-face {
-  font-family: Abel;
-  src: url("./../../assets/fonts/Abel-Regular.ttf");
-}
+//@font-face {
+//  font-family: Actor;
+//  src: url("./../../assets/fonts/Actor-Regular.ttf");
+//}
+//
+//@font-face {
+//  font-family: Abel;
+//  src: url("./../../assets/fonts/Abel-Regular.ttf");
+//}
 
