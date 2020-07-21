@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Actor;
+  src: url('./../fonts/Actor-Regular.ttf');
+}
+
+@font-face {
+  font-family: Abel;
+  src: url('./../fonts/Abel-Regular.ttf');
+}
