@@ -8,8 +8,8 @@ import {
     faBell,
     faSearch,
     faCaretDown,
-
 } from "@fortawesome/free-solid-svg-icons";
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
 
@@ -36,9 +36,9 @@ const Header = () => {
             <div className={headerContainer}>
 
                 <div className={headerLogoSearchBlock}>
-                    <div className={logoBlock}>
+                    <NavLink to='/' className={logoBlock}>
                         IncubatorBlog
-                    </div>
+                    </NavLink>
 
                     <div className={searchBlock}>
                         <label htmlFor="search">
@@ -53,35 +53,35 @@ const Header = () => {
 
                     <ul className={headerMenu}>
                         <li className={headerMenuItem}>
-                            <a href="/">
+                            <NavLink to="/">
                                 <p className={pItem}>
                                     <FontAwesomeIcon icon={faHome}/>
                                 </p>
                                 <p className={pItemSpan}>
                                     <span>Home</span>
                                 </p>
-                            </a>
+                            </NavLink>
                         </li>
                         <li className={`${headerMenuItem} ${headerNotification}`}>
                             <p className={countOfNotifications}>19</p>
-                            <a href="/">
+                            <NavLink to="/">
                                 <p className={pItem}>
                                     <FontAwesomeIcon icon={faBell}/>
                                 </p>
                                 <p className={pItemSpan}>
                                     <span>Notifications</span>
                                 </p>
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
 
-                    <div className={headerAccount}>
+                    <NavLink to='/' className={headerAccount}>
                         <p className={headerImgBlock}></p>
                         <div className={headerAccountCaret}>
                             <span>Me</span>
                             <FontAwesomeIcon icon={faCaretDown}/>
                         </div>
-                    </div>
+                    </NavLink>
 
                 </div>
             </div>
