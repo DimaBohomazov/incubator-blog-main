@@ -1,11 +1,31 @@
 .header {
   display: flex;
-  max-width: 1440px;
+  //max-width: 1440px;
   width: 100%;
+  min-height: 55px;
   height: 55px;
   margin: 0 auto;
   background-color: var(--header-bg-color);
   align-items: center;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: calc(235px + 630px + 205px + 50px);
+  width: 100%;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.headerLogoSearchBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(140px + 235px + 20px);
+  input {
+    font-family: Abel;
+  }
 }
 
 .logoBlock {
@@ -22,6 +42,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: Actor;
+  cursor: pointer;
 }
 
 .searchBlock {
@@ -52,7 +73,9 @@
   display: flex;
   color: var(--header-menu-font-color);
   justify-content: space-between;
-  width: 250px;
+  align-items: center;
+  max-width: calc(26px + 60px + 14px + 25px + 100px);
+  width: 100%;
 }
 
 .headerMenu {
@@ -73,21 +96,57 @@
   }
 }
 
+.headerNotification {
+  position: relative;
+}
+
+.countOfNotifications {
+  position: absolute;
+  background-color: var(--notification-alert-bg-color);
+  border: var(--notification-alert-border);
+  max-width: 21px;
+  width: 100%;
+  border-radius: 100px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 14px;
+  top: -5px;
+  right: 5px;
+}
+
 .pItem, .pItemSpan {
   display: flex;
   width: 100%;
   justify-content: center;
 }
 
+.pItem {
+  font-size: 18px;
+}
+
+.pItemSpan {
+  font-family: Abel;
+}
 
 .headerAccount {
+  cursor: pointer;
+  span {
+    font-family: Abel;
+  }
+}
 
+.headerAccountCaret {
+  display: flex;
+  width: calc(13px + 15px + 5px);
+  align-items: center;
+  justify-content: space-between;
 }
 
 .headerImgBlock {
   display: block;
   width: 25px;
   height: 25px;
+  margin: 0 auto;
   border-radius: 50%;
   border: var(--border-header-account);
   background-color: var(--account-bg-color);
@@ -97,3 +156,9 @@
   font-family: Actor;
   src: url("./../../assets/fonts/Actor-Regular.ttf");
 }
+
+@font-face {
+  font-family: Abel;
+  src: url("./../../assets/fonts/Abel-Regular.ttf");
+}
+
