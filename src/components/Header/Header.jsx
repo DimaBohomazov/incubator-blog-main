@@ -76,7 +76,9 @@ const Header = () => {
                     </ul>
 
                     <NavLink to='/' className={headerAccount}>
-                        <p className={headerImgBlock}></p>
+                        <p className={headerImgBlock}>
+
+                        </p>
                         <div className={headerAccountCaret}>
                             <span>Me</span>
                             <FontAwesomeIcon icon={faCaretDown}/>
