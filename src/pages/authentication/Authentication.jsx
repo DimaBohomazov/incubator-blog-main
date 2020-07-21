@@ -1,12 +1,13 @@
 import React from 'react';
 import * as s from './Authentication.module.scss';
-import './../../cssVariables/variables.css'
+import '../../assets/stylesheets/variables.css'
+import {Link} from "react-router-dom";
 
 const Authentication = () => {
 
   return (
     <div className={s.reg__container}>
-      <h1 className={s.reg__title}>Learn and develop with IncubatorBlog </h1>
+      <h1 className={s.reg__title}>Learn and develop with IncubatorBlog</h1>
       <div className={s["wrapper"]}>
       
         <form action="">
@@ -27,10 +28,10 @@ const Authentication = () => {
           
           <p className={s.reg__policy}>By clicking Agree & Join, you agree to the IncubatorBlog User Agreement, Privacy Policy, and Cookie Policy.</p>
           
-          <input type="submit" className={s.input__send}id="send-btn" value="Agree & Join"/>
+          <input type="submit" className={s.input__send} id="send-btn" value="Agree & Join"/>
         </form>
 
-        <p className={s["sign-in__line"]}>Already on IncubatorBlog? <a href="https://incubatorblog.net/login" className={s.reg__link}> Sign in</a></p>
+        <p className={s["sign-in__line"]}>Already on IncubatorBlog? <Link to="/register" className={s.reg__link}> Sign in</Link></p>
       
       </div>
                 
