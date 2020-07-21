@@ -1,0 +1,398 @@
+Index: src/cssVariables/variables.css
+===================================================================
+--- src/cssVariables/variables.css	(revision d201b53ca05b3dc5cea8556bebfae9f9e33da02e)
++++ src/cssVariables/variables.css	(revision d201b53ca05b3dc5cea8556bebfae9f9e33da02e)
+@@ -1,4 +0,0 @@
+-:root {
+-    --header-bg-color: #2D3E49;
+-    --logo-bg: #3072AC;
+-}
+\ No newline at end of file
+Index: src/components/Header/Header.module.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.header {\r\n  display: flex;\r\n  max-width: 1440px;\r\n  width: 100%;\r\n  height: 55px;\r\n  margin: 0 auto;\r\n  background-color: var(--header-bg-color);\r\n}\r\n\r\n.logoBlock {\r\n  display: flex;\r\n  background-color: var(--logo-bg);\r\n  line-height: 32px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/Header/Header.module.scss	(revision d201b53ca05b3dc5cea8556bebfae9f9e33da02e)
++++ src/components/Header/Header.module.scss	(date 1595369108896)
+@@ -1,14 +1,155 @@
+ .header {
+   display: flex;
+-  max-width: 1440px;
+   width: 100%;
++  min-height: 55px;
+   height: 55px;
+   margin: 0 auto;
+   background-color: var(--header-bg-color);
++  align-items: center;
++}
++
++.headerContainer {
++  display: flex;
++  justify-content: space-between;
++  max-width: 1160px;
++  width: 100%;
++  align-self: center;
++  margin: 0 auto;
++}
++
++.headerLogoSearchBlock {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++  width: calc(140px + 235px + 20px);
++  input {
++    font-family: Abel;
++  }
+ }
+ 
+ .logoBlock {
+   display: flex;
++  max-width: 140px;
++  width: 100%;
++  justify-content: center;
++  border-radius: 10px;
+   background-color: var(--logo-bg);
++  height: 32px;
+   line-height: 32px;
+-}
+\ No newline at end of file
++  color: var(--secondary-font-color);
++  font-size: 18px;
++  font-style: normal;
++  font-weight: normal;
++  font-family: Actor;
++  cursor: pointer;
++  text-decoration: none;
++}
++
++.searchBlock {
++  display: flex;
++  max-width: 235px;
++  width: 100%;
++  height: 32px;
++  align-items: center;
++  background-color: var(--search-bg-color);
++  border-radius: 2px;
++  label {
++    max-width: 20px;
++    width: 100%;
++    text-align: center;
++    margin-left: 5px;
++  }
++  input {
++    background-color: var(--search-bg-color);
++    height: 32px;
++    outline: none;
++    width: calc(100% - 20px);
++    border: none;
++    padding-left: 5px;
++  }
++}
++
++.headerMenuBlock {
++  display: flex;
++  color: var(--header-menu-font-color);
++  justify-content: space-between;
++  align-items: center;
++  max-width: calc(26px + 60px + 14px + 25px + 100px);
++  width: 100%;
++}
++
++.headerMenu {
++  display: flex;
++  width: 150px;
++  justify-content: space-between;
++}
++
++.headerMenuItem {
++  list-style-type: none;
++  a {
++    display: flex;
++    flex-wrap: wrap;
++    max-width: 60px;
++    height: 35px;
++    text-decoration: none;
++    color: inherit;
++  }
++}
++
++.headerNotification {
++  position: relative;
++}
++
++.countOfNotifications {
++  position: absolute;
++  background-color: var(--notification-alert-bg-color);
++  border: var(--notification-alert-border);
++  max-width: 21px;
++  width: 100%;
++  border-radius: 100px;
++  font-size: 12px;
++  text-align: center;
++  line-height: 14px;
++  top: -5px;
++  right: 5px;
++}
++
++.pItem, .pItemSpan {
++  display: flex;
++  width: 100%;
++  justify-content: center;
++}
++
++.pItem {
++  font-size: 18px;
++}
++
++.pItemSpan {
++  font-family: Abel;
++}
++
++.headerAccount {
++  cursor: pointer;
++  text-decoration: none;
++  color: var(--header-menu-font-color);
++  span {
++    font-family: Abel;
++  }
++}
++
++.headerAccountCaret {
++  display: flex;
++  width: calc(13px + 15px + 5px);
++  align-items: center;
++  justify-content: space-between;
++}
++
++.headerImgBlock {
++  display: block;
++  width: 25px;
++  height: 25px;
++  margin: 0 auto;
++  border-radius: 50%;
++  border: var(--border-header-account);
++  background-color: var(--account-bg-color);
++}
+Index: src/assets/stylesheets/variables.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/assets/stylesheets/variables.css	(date 1595369108893)
++++ src/assets/stylesheets/variables.css	(date 1595369108893)
+@@ -0,0 +1,11 @@
++:root {
++    --header-bg-color: #2D3E49;
++    --logo-bg: #3072AC;
++    --secondary-font-color: #ffffff;
++    --search-bg-color: #E1E5E8;
++    --header-menu-font-color: #C9D1D7;
++    --border-header-account: 1px solid #C9D1D7;
++    --account-bg-color: #3072AC;
++    --notification-alert-bg-color: #C12D2E;
++    --notification-alert-border: 1px solid #2D3E49;
++}
+Index: src/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport ReactDOM from 'react-dom';\r\nimport {BrowserRouter} from \"react-router-dom\";\r\nimport './index.css'\r\nimport Routes from './routes'\r\n\r\nconst App = () => (\r\n  <BrowserRouter>\r\n    <Routes/>\r\n  </BrowserRouter>\r\n)\r\n\r\n\r\nReactDOM.render(<App />, document.getElementById('root'));\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/index.js	(revision d201b53ca05b3dc5cea8556bebfae9f9e33da02e)
++++ src/index.js	(date 1595370367196)
+@@ -1,7 +1,7 @@
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import {BrowserRouter} from "react-router-dom";
+-import './index.css'
++import './assets/stylesheets/index.scss'
+ import Routes from './routes'
+ 
+ const App = () => (
+Index: src/components/Header/Header.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\n\r\nimport h from './Header.module.scss';\r\nimport './../../cssVariables/variables.css'\r\n\r\nconst Header = () => {\r\n\r\n    const {\r\n        header,\r\n        logoBlock,\r\n    } = h;\r\n\r\n    return (\r\n        <header className={header}>\r\n            <div className={logoBlock}>\r\n                IncubatorBlog\r\n            </div>\r\n            Search\r\n            Home\r\n            Notifications\r\n            Account\r\n        </header>\r\n    )\r\n};\r\n\r\nexport default Header;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/Header/Header.jsx	(revision d201b53ca05b3dc5cea8556bebfae9f9e33da02e)
++++ src/components/Header/Header.jsx	(date 1595369351518)
+@@ -1,26 +1,94 @@
+ import React from "react";
+ 
+ import h from './Header.module.scss';
+-import './../../cssVariables/variables.css'
++import '../../assets/stylesheets/variables.css'
++import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
++import {
++    faHome,
++    faBell,
++    faSearch,
++    faCaretDown,
++} from "@fortawesome/free-solid-svg-icons";
++import {NavLink} from "react-router-dom";
+ 
+ const Header = () => {
+ 
+     const {
++        pItem,
+         header,
++        pItemSpan,
+         logoBlock,
++        headerMenu,
++        searchBlock,
++        headerAccount,
++        headerImgBlock,
++        headerMenuItem,
++        headerMenuBlock,
++        headerContainer,
++        headerNotification,
++        headerAccountCaret,
++        countOfNotifications,
++        headerLogoSearchBlock,
+     } = h;
+ 
+     return (
+         <header className={header}>
+-            <div className={logoBlock}>
+-                IncubatorBlog
++            <div className={headerContainer}>
++
++                <div className={headerLogoSearchBlock}>
++                    <NavLink to='/' className={logoBlock}>
++                        IncubatorBlog
++                    </NavLink>
++
++                    <div className={searchBlock}>
++                        <label htmlFor="search">
++                            <FontAwesomeIcon icon={faSearch}/>
++                        </label>
++                        <input type='search' id='search' placeholder='Search'/>
++                    </div>
++                </div>
++
++
++                <div className={headerMenuBlock}>
++
++                    <ul className={headerMenu}>
++                        <li className={headerMenuItem}>
++                            <NavLink to="/">
++                                <p className={pItem}>
++                                    <FontAwesomeIcon icon={faHome}/>
++                                </p>
++                                <p className={pItemSpan}>
++                                    <span>Home</span>
++                                </p>
++                            </NavLink>
++                        </li>
++                        <li className={`${headerMenuItem} ${headerNotification}`}>
++                            <p className={countOfNotifications}>19</p>
++                            <NavLink to="/">
++                                <p className={pItem}>
++                                    <FontAwesomeIcon icon={faBell}/>
++                                </p>
++                                <p className={pItemSpan}>
++                                    <span>Notifications</span>
++                                </p>
++                            </NavLink>
++                        </li>
++                    </ul>
++
++                    <NavLink to='/' className={headerAccount}>
++                        <p className={headerImgBlock}>
++
++                        </p>
++                        <div className={headerAccountCaret}>
++                            <span>Me</span>
++                            <FontAwesomeIcon icon={faCaretDown}/>
++                        </div>
++                    </NavLink>
++
++                </div>
+             </div>
+-            Search
+-            Home
+-            Notifications
+-            Account
+         </header>
+     )
+ };
+ 
+-export default Header;
+\ No newline at end of file
++export default Header;
+Index: package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- package-lock.json	(revision d201b53ca05b3dc5cea8556bebfae9f9e33da02e)
++++ package-lock.json	(date 1595369108875)
+@@ -1127,6 +1127,35 @@
+       "resolved": "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz",
+       "integrity": "sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg=="
+     },
++    "@fortawesome/fontawesome-common-types": {
++      "version": "0.2.30",
++      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.30.tgz",
++      "integrity": "sha512-TsRwpTuKwFNiPhk1UfKgw7zNPeV5RhNp2Uw3pws+9gDAkPGKrtjR1y2lI3SYn7+YzyfuNknflpBA1LRKjt7hMg=="
++    },
++    "@fortawesome/fontawesome-svg-core": {
++      "version": "1.2.30",
++      "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.30.tgz",
++      "integrity": "sha512-E3sAXATKCSVnT17HYmZjjbcmwihrNOCkoU7dVMlasrcwiJAHxSKeZ+4WN5O+ElgO/FaYgJmASl8p9N7/B/RttA==",
++      "requires": {
++        "@fortawesome/fontawesome-common-types": "^0.2.30"
++      }
++    },
++    "@fortawesome/free-solid-svg-icons": {
++      "version": "5.14.0",
++      "resolved": "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.14.0.tgz",
++      "integrity": "sha512-M933RDM8cecaKMWDSk3FRYdnzWGW7kBBlGNGfvqLVwcwhUPNj9gcw+xZMrqBdRqxnSXdl3zWzTCNNGEtFUq67Q==",
++      "requires": {
++        "@fortawesome/fontawesome-common-types": "^0.2.30"
++      }
++    },
++    "@fortawesome/react-fontawesome": {
++      "version": "0.1.11",
++      "resolved": "https://registry.npmjs.org/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.11.tgz",
++      "integrity": "sha512-sClfojasRifQKI0OPqTy8Ln8iIhnxR/Pv/hukBhWnBz9kQRmqi6JSH3nghlhAY7SUeIIM7B5/D2G8WjX0iepVg==",
++      "requires": {
++        "prop-types": "^15.7.2"
++      }
++    },
+     "@hapi/address": {
+       "version": "2.1.4",
+       "resolved": "https://registry.npmjs.org/@hapi/address/-/address-2.1.4.tgz",
+@@ -11541,6 +11570,14 @@
+       "resolved": "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.7.tgz",
+       "integrity": "sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA=="
+     },
++    "react-fontawesome": {
++      "version": "1.7.1",
++      "resolved": "https://registry.npmjs.org/react-fontawesome/-/react-fontawesome-1.7.1.tgz",
++      "integrity": "sha512-kottReWW1I9Uupub6A5YX4VK7qfpFnEjAcm5zB4Aepst7iofONT27GJYdTcRsj7q5uQu9PXBL7GsxAFKANNUVg==",
++      "requires": {
++        "prop-types": "^15.5.6"
++      }
++    },
+     "react-is": {
+       "version": "16.13.1",
+       "resolved": "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz",
+@@ -14076,6 +14113,11 @@
+         "minimalistic-assert": "^1.0.0"
+       }
+     },
++    "webfontloader": {
++      "version": "1.6.28",
++      "resolved": "https://registry.npmjs.org/webfontloader/-/webfontloader-1.6.28.tgz",
++      "integrity": "sha1-23hhKSU8tujq5UwvsF+HCvZnW64="
++    },
+     "webidl-conversions": {
+       "version": "4.0.2",
+       "resolved": "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-4.0.2.tgz",
