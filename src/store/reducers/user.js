@@ -4,7 +4,7 @@ import {
 } from '../actions/actionTypes'
 
 const initialState = {
-  isLoggedIn: false,
+  isLoggedIn: true,
 }
 
 export default function userReducer(state = initialState, action) {

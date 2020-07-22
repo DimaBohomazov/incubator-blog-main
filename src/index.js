@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import rootReducer from "./store/reducers/rootReducer";
+import App from "./components/App/App";
+
 import {BrowserRouter} from "react-router-dom";
-import './assets/stylesheets/index.scss'
 import {createStore, compose, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
-import rootReducer from "./store/reducers/rootReducer";
-import Routes from './routes'
+
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -21,15 +22,15 @@ const store = createStore(
   )
 );
 
-const App =  (
+const app =  (
   <Provider store={store}>
     <BrowserRouter>
-      <Routes/>
+      <App/>
     </BrowserRouter>
   </Provider>
 
 )
 
 
-ReactDOM.render(App, document.getElementById('root'));
+ReactDOM.render(app, document.getElementById('root'));
 

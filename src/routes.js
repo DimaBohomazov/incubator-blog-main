@@ -1,7 +1,9 @@
 import React from "react";
-import {Switch, Route} from 'react-router-dom'
 import Authentication from "./pages/authentication";
 import GlobalFeed from "./pages/globalFeed";
+
+import {Switch, Route} from 'react-router-dom'
+
 
 export default () => {
   return(
