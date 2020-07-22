@@ -1,15 +1,24 @@
 import React from 'react';
 import * as s from './Authentication.module.scss';
 import '../../assets/stylesheets/variables.css'
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
+import {loggedIn} from "../../store/actions/user";
+import {connect} from "react-redux";
 
-const Authentication = () => {
-
+const Authentication = ({isLoggedIn, loggedIn}) => {
+  if (isLoggedIn) {
+    return <Redirect to='/' />
+  }
   return (
     <div className={s.reg__container}>
       <h1 className={s.reg__title}>Learn and develop with IncubatorBlog</h1>
       <div className={s["wrapper"]}>
-      
+        <button
+          className={s.input__send}
+          onClick={loggedIn}
+        >
+          Enter
+        </button>
         <form action="">
           <label htmlFor="name" className={s.reg__label}>Your Name</label>
           <input className={s.input__name} required="" id="name" type="text" name="user-name" placeholder="" defaultValue=""/>
@@ -39,4 +48,15 @@ const Authentication = () => {
   );
 };
 
-export default Authentication;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.user.isLoggedIn
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    loggedIn: () => dispatch(loggedIn())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Authentication);

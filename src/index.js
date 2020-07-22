@@ -1,15 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from "react-router-dom";
-import './assets/stylesheets/index.scss'
-import Routes from './routes'
+import rootReducer from "./store/reducers/rootReducer";
+import App from "./components/App/App";
 
-const App = () => (
-  <BrowserRouter>
-    <Routes/>
-  </BrowserRouter>
+import {BrowserRouter} from "react-router-dom";
+import {createStore, compose, applyMiddleware} from 'redux'
+import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
+
+
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    }) : compose;
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(
+    applyMiddleware(thunk)
+  )
+);
+
+const app =  (
+  <Provider store={store}>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
+  </Provider>
+
 )
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(app, document.getElementById('root'));
 
